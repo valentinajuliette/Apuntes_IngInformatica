@@ -1,5 +1,6 @@
 ##INSTALACIÓN DE DJANGO
 
+Paso 1: Configurar el proyecto Django
 ###Instalar Django Framework
 Para crear proyectos en Django, utilizaremos el comando django-admin.
 django-admin startproject <nombre_de_proyecto>
@@ -28,3 +29,16 @@ Python manage.py runserver #El terminal debe apuntar al directorio creado en el 
 
 ### Crear superusuario
 python manage.py createsuperuser
+
+#Añadir la aplicación a la configuración de tu proyecto en fundit_project/settings.py.
+INSTALLED_APPS = [
+    # other apps
+    '<nombre_de_proyecto>',
+]
+
+Paso 2: Configurar Bootstrap y archivos estáticos
+Agrega una carpeta static en el directorio de tu aplicación ( <nombre_de_proyecto>/static/) para almacenar archivos CSS y JS.
+Incluye Bootstrap en tus plantillas agregando su enlace CDN o descargando archivos CSS y JS de Bootstrap en la carpeta stactic.
+
+Paso 3: Crear la plantilla HTML
+Crea un archivo HTML (por ejemplo, index.html) dentro de una nueva carpeta templates ( <nombre_de_proyecto>/templates/<nombre_de_proyecto>/index.html) y usa Bootstrap para el diseño.
