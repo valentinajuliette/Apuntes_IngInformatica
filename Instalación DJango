@@ -1,0 +1,18 @@
+##INSTALACIÓN DE DJANGO
+
+###Instalar Django Framework
+Para crear proyectos en Django, utilizaremos el comando django-admin.
+djangoadmin startproject <nombre_de_proyecto>
+#El terminal debe apuntar a la ruta donde deseas guardar tu proyecto
+
+El comando anterior generará un árbol de directorios con los archivos básicos para iniciar el proyecto:
+• El directorio principal misitio será el contenedor del proyecto.
+• manage.py es una utilidad de línea de comando que nos permitirá interactuar con el proyect.
+• El directorio interno misitio representa al proyecto y se usará como raíz para importar cualquier elemento a él.
+• misitio/urls.py contiene la declaración de URL’s del proyecto. Es como un índice de los archivos del proyecto.
+
+###Iniciar servidor Django
+Python manage.py runserver #El terminal debe apuntar al directorio creado en el paso anterior
+#Si ingresas a: http://localhost:8000 en el navegador, deberías ver la página de inicio de tu proyecto.
+#La terminal donde se inicia el servidor quedará capturada por el servicio. Necesitarás abrir una nueva terminal para seguir trabajando.
+#Para detener el servicio debes presionar la combinación de teclas Control + C
