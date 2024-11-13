@@ -2,7 +2,7 @@
 
 ###Instalar Django Framework
 Para crear proyectos en Django, utilizaremos el comando django-admin.
-djangoadmin startproject <nombre_de_proyecto>
+django-admin startproject <nombre_de_proyecto>
 #El terminal debe apuntar a la ruta donde deseas guardar tu proyecto
 
 El comando anterior generará un árbol de directorios con los archivos básicos para iniciar el proyecto:
