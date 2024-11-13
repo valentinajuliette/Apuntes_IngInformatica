@@ -12,14 +12,17 @@ El comando anterior generará un árbol de directorios con los archivos básicos
 • El directorio interno misitio representa al proyecto y se usará como raíz para importar cualquier elemento a él.
 • misitio/urls.py contiene la declaración de URL’s del proyecto. Es como un índice de los archivos del proyecto.
 
-### Crear superusuario
-python manage.py createsuperuser
-#Username: Email address: Password: Password (again): ...
-#Superuser created successfully.
+### Crear aplicación del proyecto
+python manage.py startapp fundit
 
 ### Migrar (se repite luego de cada actualización de cambios
 python manage.py makemigrations #El terminal debe apuntar al directorio creado en el paso anterior
 python manage.py migrate
+
+### Crear superusuario
+python manage.py createsuperuser
+#Username: Email address: Password: Password (again): ...
+#Superuser created successfully.
 
 ###Iniciar servidor Django
 Python manage.py runserver #El terminal debe apuntar al directorio creado en el paso anterior
