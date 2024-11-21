@@ -33,7 +33,7 @@ Python manage.py runserver #El terminal debe apuntar al directorio creado en el 
 ### Crear superusuario
 python manage.py createsuperuser
 
-#Añadir la aplicación a la configuración de tu proyecto en fundit_project/settings.py.
+#Añadir la aplicación a la configuración de tu proyecto en <nombre_de_proyecto>_project/settings.py.
 INSTALLED_APPS = [
     # other apps
     '<nombre_de_proyecto>',
