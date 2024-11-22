@@ -1,0 +1,13 @@
+# Subir un repositorio a GitHub
+
+1. Crear repositorio en la web de github.com y copiar el link del repositorio (/path/to/origin.git).
+2. Abrir la terminal de VSCode (o el entorno virtual que estés utilizando), en la carpeta madre del proyecto que quieres
+subir a tu repositorio.
+    **Recordatorio**: el comando 'cd C:/Users/Name/Desktop/tu-ruta' permite moverse en la terminal hasta la ruta que desees,
+y el comando 'cd..' permite retrocer un directorio en tu ruta actual.
+3. Código para ingresar en la terminal:
+    git init
+    git remote add origin /path/to/origin.git
+    git add .
+    git commit -m "initial commit"
+    git push origin main
