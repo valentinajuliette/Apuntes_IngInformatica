@@ -1,0 +1,117 @@
+Crear una API REST con JSON en Django es sencillo, especialmente utilizando Django REST Framework (DRF). Aquí te guiaré paso a paso:
+
+1. Instalar Django REST Framework
+Primero, asegúrate de tener DRF instalado en tu entorno. Puedes hacerlo con pip:
+
+bash
+Copiar código
+pip install djangorestframework
+2. Configurar Django REST Framework
+Agrega 'rest_framework' a la lista de aplicaciones instaladas en el archivo settings.py de tu proyecto:
+
+python
+Copiar código
+INSTALLED_APPS = [
+    # Otras apps
+    'rest_framework',
+]
+3. Crear un Modelo
+Define un modelo en tu aplicación si aún no tienes uno. Por ejemplo:
+
+python
+Copiar código
+from django.db import models
+
+class Producto(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    disponible = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.nombre
+Ejecuta las migraciones:
+
+bash
+Copiar código
+python manage.py makemigrations
+python manage.py migrate
+4. Crear un Serializador
+Los serializadores convierten datos complejos (como objetos de modelo) en JSON y viceversa. Crea un archivo serializers.py en tu aplicación y define el serializador:
+
+python
+Copiar código
+from rest_framework import serializers
+from .models import Producto
+
+class ProductoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Producto
+        fields = '__all__'  # O especifica campos: ['id', 'nombre', 'precio']
+5. Crear Vistas de la API
+Crea vistas para manejar las solicitudes HTTP. Puedes usar vistas basadas en clases de DRF. Por ejemplo:
+
+python
+Copiar código
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Producto
+from .serializers import ProductoSerializer
+
+class ProductoList(APIView):
+    def get(self, request):
+        productos = Producto.objects.all()
+        serializer = ProductoSerializer(productos, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = ProductoSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+6. Configurar las URLs
+Agrega las rutas de la API en el archivo urls.py de tu aplicación:
+
+python
+Copiar código
+from django.urls import path
+from .views import ProductoList
+
+urlpatterns = [
+    path('api/productos/', ProductoList.as_view(), name='producto-list'),
+]
+Si necesitas incluir las rutas en el archivo urls.py del proyecto:
+
+python
+Copiar código
+from django.urls import include, path
+
+urlpatterns = [
+    path('', include('tu_app.urls')),
+]
+7. Probar la API
+Ejecuta el servidor de desarrollo:
+
+bash
+Copiar código
+python manage.py runserver
+Abre un cliente como Postman o usa curl para interactuar con tu API:
+
+GET: http://127.0.0.1:8000/api/productos/ para obtener todos los productos.
+POST: Enviar datos JSON para crear un nuevo producto.
+Ejemplo JSON para POST:
+
+json
+Copiar código
+{
+    "nombre": "Taza reciclable",
+    "descripcion": "Taza hecha de materiales reciclados.",
+    "precio": 12.99,
+    "disponible": true
+}
+8. Mejorar la API (Opcional)
+Vistas genéricas: Usa vistas como ListCreateAPIView para simplificar la implementación.
+Viewsets y Routers: Configura rutas automáticamente con ViewSets y DefaultRouter.
+Autenticación y permisos: Configura autenticación con rest_framework.authentication y permisos con rest_framework.permissions.
