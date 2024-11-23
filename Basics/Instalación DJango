@@ -3,8 +3,8 @@
 Paso 1: Configurar el proyecto Django
 ###Instalar Django Framework
 Para crear proyectos en Django, utilizaremos el comando django-admin.
-django-admin startproject <nombre_de_proyecto>_project
 #El terminal debe apuntar a la ruta donde deseas guardar tu proyecto
+django-admin startproject <nombre_de_proyecto>_project
 
 El comando anterior generará un árbol de directorios con los archivos básicos para iniciar el proyecto:
 • El directorio principal misitio será el contenedor del proyecto.
@@ -13,10 +13,11 @@ El comando anterior generará un árbol de directorios con los archivos básicos
 • misitio/urls.py contiene la declaración de URL’s del proyecto. Es como un índice de los archivos del proyecto.
 
 ### Crear aplicación del proyecto
+#El terminal debe apuntar al directorio creado en el paso anterior
 python manage.py startapp <nombre_de_proyecto>
 
 ### Migrar (se repite luego de cada actualización de cambios
-python manage.py makemigrations #El terminal debe apuntar al directorio creado en el paso anterior
+python manage.py makemigrations
 python manage.py migrate
 
 ### Crear superusuario
