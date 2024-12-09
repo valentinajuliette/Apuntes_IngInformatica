@@ -1,0 +1,157 @@
+<!-- DESCRIPCIÓN DEL PROYECTO:
+Crudo es un pequeño emprendimiento de comida saludable con gran potencial para crecer. Los
+dueños desean posicionarse en internet como un primer paso para la incursión en el delivery y el
+catering en eventos privados e institucionales. Como primer paso, se les ha recomendado la
+creación de un sitio web donde puedan darse a conocer como empresa.
+Durante la última reunión con el cliente, se ha decidido agregar la característica de responsividad al
+sitio, por lo que se le ha encargado a usted la tarea de construir una nueva versión del sitio utilizando
+Bootstrap framework.
+CONSIDERACIONES:
+• El sitio está compuesto por sólo una página.
+• Considere aspectos de accesibilidad en el trato de las imágenes e hipervínculos. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDO</title>
+    <!-- Se linkea a la carpeta de css descargada desde el browser de bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <!-- debemos definir distintos breakpoints para que se genere la adaptación en caso de cambio de pantalla -->
+    <div class="container-fluid">
+        <div id=nav class="letrablanquita">
+            <div class="row">
+                <div class="col-4">
+                    <br>
+                    <img src="img/logo.svg" class="img-fluid" alt="logo de CRUDO">
+                </div>
+                <div class="col">
+                    <br>
+                    <p>Home</p>
+                </div>
+                <div class="col">
+                    <br>
+                    <p>Historia</p>
+                </div>
+                <div class="col">
+                    <br>
+                    <p>Reseñas</p>
+                </div>
+                <div class="col">
+                    <br>
+                    <p>Ubicación</p>
+                </div>
+                <div class="col">
+                    <br>
+                    <p>Recetas</p>
+                </div>
+                <div class="col">
+                    <br>
+                    <p>Equipo</p>
+                </div>
+                <div class="col">
+                    <br>
+                    <p>Contacto</p>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+
+        <div id=vegan class="objectfit1">
+            <img id=fotovegan src="img/vegan.jpg" class="img-fluid" alt="palabra 'VEGAN' rodeada de una mata pequeña de perejil">
+        </div>
+        
+        <div id=footer>
+            <div class="row abajo">
+                <br><br>
+                <div class="col izquierda abajo margen">
+                    <br><br>
+                    Calle 4, Sta. Inés 2480, local 5.
+                    <br>Viña del Mar, Valparaíso.
+                </div>
+                <div class="col derecha abajo margen">
+                    <br><br><br>
+                    REDES SOCIALES
+                </div>
+            </div>
+        </div>
+        
+        <div id=coaching>
+            <div class="row margen">
+                <div class="col derecha">
+                    <br>
+                    <h1><strong>COACHING</strong></h1>
+                    <h8>HEALTH AND HAPPINESS</h8>
+                    <p>____________________</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestiae deleniti, quisquam dolorem fugit rerum tenetur distinctio error laudantium illo sapiente hic pariatur, culpa necessitatibus! Velit doloribus quas quisquam voluptas?</p>
+                </div>
+                <div class="col izquierda">
+                    <br>
+                    <img src="img/radijs.jpg" class="img-fluid" alt="foto de un rábano">
+                </div>
+            </div>
+            <div class="row margen">
+                <div class="col derecha">
+                    <br>
+                    <img src="img/knoflook.jpg" class="img-fluid" alt="foto de unos ajos">
+                </div>
+                <div class="col izquierda">
+                    <br>
+                    <h1><strong>CROWDFUNDING</strong></h1>
+                    <h8>DROOM MET ONS MEE</h8>
+                    <p>____________________</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus praesentium magnam itaque ullam, ratione expedita neque voluptate accusantium quas deserunt consectetur culpa fuga obcaecati, laboriosam amet ut corporis atque explicabo?</p>
+                    <br>
+                    <button type="button" class="btn btn-outline-dark">CROWDFUNDING</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id=eetcafe class="objectfit2">
+            <img id="fotoeetcafe" src="img/eetcafe.jpg" class="img-fluid" alt="palabra 'EETCAFÉ' en medio de frambuesas y moras">
+        </div>
+        
+        <div id=winkel>
+            <div class="row">
+                <div class="col centrado objectfit3">
+                    <br><br><br><br><br>
+                    <img src="img/logo2.png" class="img-fluid" alt="logo y redes sociales de CRUDO" width="50%">
+                </div>
+                <div class="col-4">
+                    <br><br><br>
+                    <strong>CONTÁCTANOS</strong>
+                    <br><br>
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input type="name" class="form-control" id="floatingInputName" placeholder="Name LastName">
+                            <label for="floatingInput">Nombre completo</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                            <label for="floatingInput">Correo electrónico</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px"></textarea>
+                            <label for="floatingTextarea">Escribe tu mensaje</label>
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark col-12">Enviar</button>
+                    </form>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
+
+        <!-- El script debe ir al final del contenido del body, para que el contenido "exista" antes de darle un estilo,
+    debido a que html se ejecuta línea por línea -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+
+</html>
