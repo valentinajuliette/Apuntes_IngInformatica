@@ -1,0 +1,34 @@
+https://www.youtube.com/watch?v=V-h1K1NiGro
+
+rocky
+sudo passwd root
+su -
+dnf install httpd
+systemctl start httpd
+systemctl enable httpd
+dnf install mariadb
+dnf install mariadb-server
+dnf install php php-curl php-zip php-opcache php-mysqlnd
+dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+dnf config-manager --set-enabled remi
+dnf install phpmyadmin --error
+systemctl start httpd
+systemctl start mariadb
+systemctl enable mariadb
+systemctl enable httpd
+mysql_secure_installation
+cd /var/www/html
+touch index.html
+vi index.html
+touch info.php
+vi info.php
+-- <?php phpinfo(); ?>
+vi /etc/httpd/conf.d/phpMyAdmin.conf
+Alias /pma /usr/share/phpMyAdmin
+<Directory usr/share/phpMyAdmin/>
+     AddDefaultCharset UTF-8
+     Require local
+     Reaquire all granted
+</Directory>
+mysql_secure_installation
+--/pma/
